@@ -1,0 +1,64 @@
+% \bib, bibdiv, biblist are defined by the amsrefs package.
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{lsg}{book}{
+      author={Cannas~da Silva, Ana},
+       title={Lectures on symplectic geometry},
+   publisher={Springer},
+        date={2001},
+}
+
+\bib{cls}{book}{
+      author={Cox, David},
+      author={Little, John},
+      author={Schenck, Hal},
+       title={Toric varieties},
+   publisher={American Mathematical Society},
+        date={2011},
+}
+
+\bib{hamilton}{article}{
+      author={Hamilton, Mark},
+       title={The quantization of a toric manifold is given by the integer lattice points in the moment polytope},
+        date={2006},
+     journal={Proceedings of 2006 International Toric Topology Conference},
+}
+
+\bib{hoskins}{article}{
+      author={Hoskins, Victoria},
+       title={Geometric invariant theory and symplectic quotients},
+}
+
+\bib{htt}{book}{
+      author={Hotta, Ryoshi},
+      author={Takeuchi, Kiyoshi},
+      author={Tanisaki, Toshiyuki},
+       title={D-modules, perverse sheaves, and representation theory},
+   publisher={Birkhäuser},
+        date={2008},
+}
+
+\bib{huybrechts}{book}{
+      author={Huybrechts, Daniel},
+       title={Complex geometry: An introduction},
+   publisher={Springer},
+        date={2005},
+}
+
+\bib{mcduff-salamon}{book}{
+      author={McDuff, Dusa},
+      author={Salamon, Dietmar},
+       title={Introduction to symplectic topology},
+   publisher={Oxford University Press},
+        date={1998},
+}
+
+\bib{proudfoot}{article}{
+      author={Proudfoot, Nicholas},
+       title={Lectures on toric varieties},
+        date={2010},
+}
+
+\end{biblist}
+\end{bibdiv}
