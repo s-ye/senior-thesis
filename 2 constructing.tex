@@ -295,6 +295,19 @@ ends up being encoded in the data of a fan.
 Given a Delzant polytope $P$, there is a fan $\Sigma_P$ in $N_\R$ obtained by taking 
 normal directions to the facets of $P$. The fan $\Sigma_P$ is called the \emph{normal fan} of $P$
 and it is a combinatorial object which encodes an equivariant atlas of charts for the toric variety $X(P)$.
+
+\begin{definition}
+    A fan $\Sigma$ is \emph{complete} if the union of the cones in $\Sigma$ is all of $N_\R$.
+    A fan $\Sigma$ is \emph{nonsingular} if for each $k$-dimensional cone $\sigma\in\Sigma$,
+    there exist $k$ lattice vectors $v_1,\dots,v_k$ such that $\{v_1,\dots,v_k\}$ generate $\sigma$
+    and $v_1,\dots,v_k$ can be extended to a basis of $N$.
+    A fan $\Sigma$ is \emph{projective} if there is a rational polytope $P$ such that $\Sigma$ is the normal fan of $P$.
+\end{definition}
+
+As the geometric language suggests, the toric variety $X(\Sigma)$ 
+corresponding to a fan $\Sigma$ is complete if and only if the fan is complete,
+and $X(\Sigma)$ is smooth if and only if the fan is nonsingular.
+
 See \cite{cls} for more details. 
 
 

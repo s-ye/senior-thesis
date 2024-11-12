@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: 1 main.aux
+The style file: amsrn.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: refs.bib
+Warning--missing date in fulton-anderson
+Warning--No year or other date information for hoskins
+Warning--missing date in tu
+You've used 11 entries,
+            1497 wiz_defined-function locations,
+            449 strings with 3504 characters,
+and the built_in function-call counts, 5938 in all, are:
+= -- 147
+> -- 383
+< -- 1
++ -- 36
+- -- 344
+* -- 429
+:= -- 870
+add.period$ -- 0
+call.type$ -- 11
+change.case$ -- 50
+chr.to.int$ -- 3
+cite$ -- 14
+duplicate$ -- 588
+empty$ -- 310
+format.name$ -- 34
+if$ -- 759
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 283
+newline$ -- 82
+num.names$ -- 22
+pop$ -- 683
+preamble$ -- 1
+purify$ -- 39
+quote$ -- 0
+skip$ -- 96
+stack$ -- 0
+substring$ -- 57
+swap$ -- 341
+text.length$ -- 43
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 88
+warning$ -- 3
+while$ -- 65
+width$ -- 0
+write$ -- 156
+(There were 3 warnings)

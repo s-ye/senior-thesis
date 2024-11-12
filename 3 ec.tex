@@ -172,4 +172,113 @@ for $S^1$-actions.
 \end{example}
 
 \subsection{Proof of Danilov's theorem}
+\subsubsection{Cone-orbit correspondence}
+Let $T$ be an $n$-dimensional torus with character group $M$. Let $N = \Hom(M,\Z)$ be the
+dual lattice, their pairing is denoted by $\langle \cdot,\cdot\rangle$. Let $X = X(\Sigma)$ be a smooth
+complete toric variety, which are in bijection with complete nonsingular fans $\Sigma$ in $N_\R$.
+
+\hfill
+
+For any convex cone $\sigma \subset N_\R$, the \emph{dual cone} in $M_\R$ is \begin{align*}
+    \sigma^\vee = \{u\in M_\R \mid \langle u,v\rangle \geq 0 \text{ for all } v\in \sigma\}.
+\end{align*} By intersecting with the lattice, we obtain a semigroup $\sigma^\vee \cap M$
+with corresponding semigroup algebra $\C[\sigma^\vee \cap M]$. The toric variety $X$
+is covered by $T$-variant open affine sets \begin{align*}
+    U_\sigma = \Spec \C[\sigma^\vee \cap M]
+\end{align*} The affine charts corresponding to the top-dimensional cones of $\Sigma$ 
+are enough to cover $X$, and the intersection of cones corresponds to the intersection of
+affine charts.
+
+\hfill
+
+Each cone $\tau$ of the fan also defines a torus-invariant subvariety $V(\tau)$ of $X$ of codimension $\dim \tau$.
+On open affines, the subvariety looks like \begin{align*}
+    V(\tau) \cap U_\sigma = \Spec \C[\tau^{\perp} \cap \sigma^\vee \cap M] \hookrightarrow \Spec \C[\sigma^\vee \cap M]
+\end{align*} and so elements of the dual lattice $N$ can be thought of as rational functions on $X$.
+\subsubsection{Bialynicki-Birula decomposition}
+The Bialynicki-Birula decomposition is a 
+generalization of the Morse theory for torus actions. Suppose 
+that $\C^*$ acts on a smooth projective variety $X$ with finitely 
+many fixed points $p_1,\ldots,p_k$. 
+
+\hfill
+
+Then each $T_{p_i}X$ is a representation of $\C^*$, and so we can decompose
+into weight spaces \begin{align*}
+    T_{p_i}X = \bigoplus_{\lambda\in \C} V_\lambda
+\end{align*} where $V_\lambda = \set{v\in T_{p_i}X \mid t\cdot v = t^\lambda v}$.
+Note that $\lambda\neq 0 $ because the fixed point set is isolated.
+
+Define the attracting set \begin{align*}
+    C_i = \set{x\in X \mid \lim_{t\to 0} t\cdot x = p_i}
+\end{align*} 
+
+\begin{theorem}
+    [Bialynicki-Birula] 
+    There existsa filtration of $X$ by closed subschemes \begin{align*}
+        X = X_n \supset X_{n-1} \supset \cdots \supset X_0 
+    \end{align*} such that 
+    each $X_i \backslash X_{i-1}$ is a disjoint union of affine spaces called cells, 
+    in particular the attracting sets.
+\end{theorem}
+
+\begin{cor}
+    Let $X$ as above. Then \begin{enumerate}
+        \item $H_{2i+1}(X) = 0$ for all $i$;
+        \item $H_{2i}(X)$ is a $\Z$-module freely generateed by the classes
+        of the closures of the $i$-dimensional cells.
+    \end{enumerate}
+\end{cor}
+
+\subsubsection{Shellings}
+In this section, we apply the setup 
+of the Bialynicki-Birula decomposition to the context of toric varieties.
+
+\hfill
+
+Let $X = X(\Sigma)$ be projective, with $P$ 
+a polytope whose normal fan is $\Sigma$. Choosing
+a general vector $v\in N_\R$ we obtain an ordering of the vertices 
+$u_1,\ldots,u_s$ of $P$ by the order of the inner products $\langle v,u_i\rangle$.
+Geometrically, we are choosing a $1$-parameter subgroup of the torus $T$ 
+which acts on $X$. The correpsonding sub-moment map turns out to be
+a perfect Morse-Bott function on $X$.
+
+\hfill
+
+By the polytope-fan correspondence,
+we get an ordering of the maximal cones $\sigma_1,\ldots,\sigma_s$ of $\Sigma$.
+For $1\leq i \leq s$ let \begin{align*}
+    \tau_i = \bigcap_{j>i, \dim(\sigma_j \cap \sigma_i) = n-1} \sigma_j \cap \sigma_i
+\end{align*} so that 
+$\tau_1 = \set{0}, \tau_s = \sigma_s$ and $\tau_p \subset \tau_q$
+implies $p \leq q$. Such an ordering of cones 
+is called a \emph{shelling} of $\Sigma$. 
+
+\begin{proposition}
+    A shelling gives a cellular decomposition of $X$, with
+the closures of the cells being $V(\tau_i)$. In particular,
+the classes \begin{align*}
+    \alpha_i = [V(\tau_i)] \in H^{2(n-\dim \tau_i)}(X)
+\end{align*}
+form an additive $\Z$-basis of $H^*(X)$.
+\end{proposition}
+
+
+The $V(\tau_i)$ are precisely the closures of the attracting sets 
+of the chosen $\C^*$-action on $X$. We will demonstrate this in a particularly
+pleasant example.
+\begin{example}
+    [Morse theory on $\C\P^2$]
+    Classically, recall that the Chow ring (or cohomology ring) of
+     $\C\P^2$ is \begin{align*}
+        H^*(\C\P^2) = \Z[0] \oplus \Z[\P^1] \oplus \Z[\P^2]
+    \end{align*} Consider the standard action of $T^2$ on $\C\P^2$
+    and consider the $1$-parameter subgroup acting by $t\cdot[x:y:z] = [tx:t^2y:z]$.
+    Consider the following moment image, whose 
+    edges are labled by the weights of the action on the tangent space at the fixed points:
+    
+\end{example}
+
+
 \subsection{GKM Theory}
