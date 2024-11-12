@@ -1,27 +1,27 @@
 \contentsline {section}{\tocsection {}{1}{Introduction}}{1}{section.1}%
 \contentsline {section}{\tocsection {}{2}{Constructing toric varieties}}{1}{section.2}%
-\contentsline {subsection}{\tocsubsection {}{2.1}{Delzant polytopes}}{1}{subsection.2.1}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{Delzant polytopes}}{2}{subsection.2.1}%
 \contentsline {subsection}{\tocsubsection {}{2.2}{Moment maps}}{2}{subsection.2.2}%
 \contentsline {subsection}{\tocsubsection {}{2.3}{Symplectic reduction}}{4}{subsection.2.3}%
 \contentsline {subsection}{\tocsubsection {}{2.4}{Monoid algebra}}{5}{subsection.2.4}%
 \contentsline {subsection}{\tocsubsection {}{2.5}{Projective GIT}}{5}{subsection.2.5}%
-\contentsline {subsection}{\tocsubsection {}{2.6}{Kempf-Ness theorem}}{5}{subsection.2.6}%
-\contentsline {subsection}{\tocsubsection {}{2.7}{Fans and abstract toric varieties}}{5}{subsection.2.7}%
-\contentsline {subsection}{\tocsubsection {}{2.8}{Prequantization}}{6}{subsection.2.8}%
-\contentsline {section}{\tocsection {}{3}{Equivariant cohomology}}{7}{section.3}%
-\contentsline {subsection}{\tocsubsection {}{3.1}{Basic properties}}{7}{subsection.3.1}%
-\contentsline {subsection}{\tocsubsection {}{3.2}{Examples}}{8}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{2.6}{Kempf-Ness theorem}}{6}{subsection.2.6}%
+\contentsline {subsection}{\tocsubsection {}{2.7}{Fans and abstract toric varieties}}{6}{subsection.2.7}%
+\contentsline {subsection}{\tocsubsection {}{2.8}{Prequantization}}{7}{subsection.2.8}%
+\contentsline {section}{\tocsection {}{3}{Equivariant cohomology}}{8}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Basic properties}}{8}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Examples}}{9}{subsection.3.2}%
 \contentsline {subsection}{\tocsubsection {}{3.3}{Danilov's theorem}}{9}{subsection.3.3}%
-\contentsline {subsection}{\tocsubsection {}{3.4}{ABBV localization}}{9}{subsection.3.4}%
-\contentsline {subsection}{\tocsubsection {}{3.5}{Proof of Danilov's theorem}}{10}{subsection.3.5}%
-\contentsline {subsubsection}{\tocsubsubsection {}{3.5.1}{Cone-orbit correspondence}}{10}{subsubsection.3.5.1}%
+\contentsline {subsection}{\tocsubsection {}{3.4}{ABBV localization}}{10}{subsection.3.4}%
+\contentsline {subsection}{\tocsubsection {}{3.5}{Proof of Danilov's theorem}}{11}{subsection.3.5}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.5.1}{Cone-orbit correspondence}}{11}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\tocsubsubsection {}{3.5.2}{Bialynicki-Birula decomposition}}{11}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\tocsubsubsection {}{3.5.3}{Shellings}}{11}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.5.3}{Shellings}}{12}{subsubsection.3.5.3}%
 \contentsline {subsection}{\tocsubsection {}{3.6}{GKM Theory}}{12}{subsection.3.6}%
 \contentsline {section}{\tocsection {}{4}{Sheaf cohomology}}{12}{section.4}%
 \contentsline {section}{\tocsection {}{5}{Toric degenerations}}{12}{section.5}%
 \contentsline {section}{\tocsection {}{6}{Appendix A: Vector bundles and connections}}{12}{section.6}%
 \contentsline {subsection}{\tocsubsection {}{6.1}{Parallel transport}}{12}{subsection.6.1}%
-\contentsline {subsection}{\tocsubsection {}{6.2}{Connections}}{12}{subsection.6.2}%
-\contentsline {subsection}{\tocsubsection {}{6.3}{Curvature}}{13}{subsection.6.3}%
+\contentsline {subsection}{\tocsubsection {}{6.2}{Connections}}{13}{subsection.6.2}%
+\contentsline {subsection}{\tocsubsection {}{6.3}{Curvature}}{14}{subsection.6.3}%
 \contentsline {section}{\tocsection {}{}{References}}{14}{section*.2}%
