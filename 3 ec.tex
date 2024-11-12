@@ -183,7 +183,7 @@ For any convex cone $\sigma \subset N_\R$, the \emph{dual cone} in $M_\R$ is \be
     \sigma^\vee = \{u\in M_\R \mid \langle u,v\rangle \geq 0 \text{ for all } v\in \sigma\}.
 \end{align*} By intersecting with the lattice, we obtain a semigroup $\sigma^\vee \cap M$
 with corresponding semigroup algebra $\C[\sigma^\vee \cap M]$. The toric variety $X$
-is covered by $T$-variant open affine sets \begin{align*}
+is covered by $T$-invariant open affine sets \begin{align*}
     U_\sigma = \Spec \C[\sigma^\vee \cap M]
 \end{align*} The affine charts corresponding to the top-dimensional cones of $\Sigma$ 
 are enough to cover $X$, and the intersection of cones corresponds to the intersection of
@@ -215,7 +215,7 @@ Define the attracting set \begin{align*}
 
 \begin{theorem}
     [Bialynicki-Birula] 
-    There existsa filtration of $X$ by closed subschemes \begin{align*}
+    There exists a filtration of $X$ by closed subschemes \begin{align*}
         X = X_n \supset X_{n-1} \supset \cdots \supset X_0 
     \end{align*} such that 
     each $X_i \backslash X_{i-1}$ is a disjoint union of affine spaces called cells, 
@@ -261,7 +261,10 @@ the closures of the cells being $V(\tau_i)$. In particular,
 the classes \begin{align*}
     \alpha_i = [V(\tau_i)] \in H^{2(n-\dim \tau_i)}(X)
 \end{align*}
-form an additive $\Z$-basis of $H^*(X)$.
+form an additive $\Z$-basis of $H^*(X)$. Moreover, the 
+corresponding equivariant cohomology classes \begin{align*}
+	\alpha_i^T = [V(\tau_i)]^T \in H^{2(n-\dim \tau_i)}_T(X)
+\end{align*} form an additive $\Z$-basis of $H^*_T(X)$.
 \end{proposition}
 
 
@@ -269,16 +272,75 @@ The $V(\tau_i)$ are precisely the closures of the attracting sets
 of the chosen $\C^*$-action on $X$. We will demonstrate this in a particularly
 pleasant example.
 \begin{example}
-    [Morse theory on $\C\P^2$]
-    Classically, recall that the Chow ring (or cohomology ring) of
-     $\C\P^2$ is \begin{align*}
-        H^*(\C\P^2) = \Z[0] \oplus \Z[\P^1] \oplus \Z[\P^2]
-    \end{align*} Consider the standard action of $T^2$ on $\C\P^2$
-    and consider the $1$-parameter subgroup acting by $t\cdot[x:y:z] = [tx:t^2y:z]$.
-    Consider the following moment image, whose 
-    edges are labled by the weights of the action on the tangent space at the fixed points:
-    
+	[Morse theory on $\C\P^2$]
+	Classically, recall that the Chow ring (or cohomology ring) of
+	 $\C\P^2$ is \begin{align*}
+		H^*(\C\P^2) = \Z[0] \oplus \Z[\P^1] \oplus \Z[\P^2]
+	\end{align*} Consider the standard action of $T^2$ on $\C\P^2$
+	and consider the $1$-parameter subgroup acting by $t\cdot[x:y:z] = [tx:t^2y:z]$.
+	Consider the following moment image, whose 
+	edges are labeled by the weights of the action on the tangent space at the fixed points:
+	
+	\begin{center}
+		\begin{tikzpicture}
+			% Define the points
+			\coordinate (A) at (4,0);
+			\coordinate (B) at (0,0);
+			\coordinate (C) at (0,3);
+		
+			% Draw the triangle edges
+			\draw[<-] (B) -- (A) node[near start, below] {1};
+			\draw[<-] (A) -- (C) node[near end, right] {-1};
+			\draw[->] (C) -- (B) node[near start, left] {-2};
+		
+			% Draw the reverse direction labels
+			\node at (3.75,-0.2) {-1};
+			\node at (0.75,.25) {2};
+			\node at (4,.5) {1};
+		
+			% Label the points
+			\node[above right] at (A) {A};
+			\node[below left] at (B) {B};
+			\node[above left] at (C) {C};
+		
+			% Draw the outline of the triangle without arrows
+			\draw (A) -- (B) -- (C) -- cycle;
+		\end{tikzpicture}
+	\end{center}
+	Based on our choice of $1$-parameter subgroup, we have the following decomposition: \begin{align*}
+		\C\P^2 &= C \coprod (\P^1 \backslash C) \coprod \P^2 \backslash \P^1 
+	\end{align*} One sees this decomposition by considering 
+	the attracting sets of the action for each fixed point. For $C$ the 
+	attracting set is $C$ itself, for $A$ the attracting set is the line $\P^1$,
+	all the points of $\P^1$ except $C$ are attracted to $A$, and for $B$ the attracting
+	set is $\P^2 \backslash \P^1$,
+	where the $\P^1$ is the $T$-invariant curve which joins the fixed points $A$ and $C$.
+	These cells are all affine spaces, and their
+	 closures are precisely $V(\tau_i) = \P^i$.
 \end{example}
+The equivariant statement follows from applying the Bialynicki-Birula decomposition
+to the mixing space, which admits a finite dimensional approximation by smooth
+projective varieties. See \cite{fulton-anderson} for more details.
 
+\hfill 
+
+If $X$ is not projective, then one can subdivide cones and produce 
+a refinement $\Sigma'$ of $\Sigma$ so that the corresponding map \begin{align*}
+	\pi: X(\Sigma') \to X(\Sigma)
+\end{align*} is a surjective birational $T$-equivariant morphism and 
+$X(\Sigma')$ is smooth and projective. The composition \begin{align*}
+	\pi_*\circ \pi^*: H^*(X(\Sigma)) \to H^*(X(\Sigma))
+\end{align*} is the identity on $H^*(X(\Sigma))$ and on $H^*_T(X(\Sigma))$
+and therefore $\pi^*$ is injective and $\pi_*$ is surjective. Assembling
+the results of the previous sections, we obtain the following proposition.
+
+\begin{proposition}
+	For any complete smooth toric variety $X$, the cohomology ring $H^*(X)$
+	 is generated by the classes $[V(\tau_i)]$ of the closures of the attracting sets
+	as $\Z$-module, and the equivariant cohomology ring $H^*_T(X)$ is generated 
+	by the classes $[V(\tau_i)]^T$ as a module over $H^*_T(\text{pt})$.
+\end{proposition}
+
+\subsubsection{The Stanley-Reisner ring}
 
 \subsection{GKM Theory}
