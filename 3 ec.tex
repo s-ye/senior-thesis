@@ -1,13 +1,11 @@
-We introduce equivariant cohomology and some classical results about the
+We introduce $T$-equivariant cohomology and some classical results about the
 $T$-equivariant cohomology of smooth projective toric varieties.
 
 \subsection{Basic properties}
-Let $G$ be a Lie group. The equivariant cohomology ring $H_G^*(X)$ of a $G$-space $X$ is
-defined as the singular cohomology of the Borel construction $X\times_G EG$,
-where $EG$ is a contractible space on which $G$ acts freely. Such a space
-always exists and is unique up to homotopy equivalence \cite{hatcher}.
-
-\hfill
+Let $T$ be a complex torus. The equivariant cohomology ring $H_T^*(X)$ of a $T$-space $X$ is
+defined as the singular cohomology of the Borel construction $X\times_T ET$,
+where $ET$ is a contractible space on which $T$ acts freely. Such a space
+always exists and is unique up to homotopy equivalence, cf. \cite{hatcher}.
 
 Here are some important properties to know about equivariant cohomology:
 
@@ -24,23 +22,18 @@ Here are some important properties to know about equivariant cohomology:
 where all subsets and maps are assumed to be equivariant. The
 ring $H^*_T(X)$ is a module over $H^*_T(\text{pt})$ via the map $X \to \text{pt}$.
 
-\hfill
-
 We now introduce a notion of equivariant formality which is a particularly
-nice algebraic notion.
-It implies that
-the equivariant cohomology of $X$ is a free module over the equivariant cohomology
-of a point.
+nice algebraic notion. It implies that the equivariant cohomology of $X$ is a free module over the equivariant cohomology of a point.
 
 \begin{definition}
-	A $G$-space $X$ is called \textbf{equivariantly formal} if the Leray spectral sequence
+	A $T$-space $X$ is called \textbf{equivariantly formal} if the Leray spectral sequence
 	associated to the fibration $X \to X \times_T ET \to BT$ collapses at the $E_2$-page.
 \end{definition}
 
 By definition, we have that
 \begin{proposition}
 	If $X$ is equivariantly formal, then \begin{align*}
-		H^*_G(X) \cong H^*_G(\text{pt}) \otimes H^*(X).
+		H^*_T(X) \cong H^*_T(\text{pt}) \otimes H^*(X).
 	\end{align*}
 \end{proposition}
 
@@ -48,12 +41,10 @@ When $X$ is equivariantly formal,
 the ordinary cohomology can be recovered from
 equivariant cohomology as the quotient
 \[
-	H^*(X) = \frac{H^*_T(X)}{M \cdot H^*_T(X)}
+	H^*(X) = \frac{H^*_T(X)}{H^*_T(\text{pt}) \cdot H^*_T(X)}
 \]
 which in effect simply sets each $t_i = 0$.
 In particular, $H^*_T(X)$ is a free module over $H^*_T(\text{pt})$.
-
-\hfill
 
 Many varieties of interest are equivariantly formal, such as all of the following:
 \begin{enumerate}
@@ -68,31 +59,79 @@ We introduce some examples.
 
 \begin{example}
 	We can identify $U(n)$ as those complex matrices preserving
-	the standard Hermitian form on $\C^n$. The group $U(n)$ acts on $S^{2n-1}$ transitively
-	and the stabilizer of the point $(1,0,\ldots,0)$ is $U(n-1)$.
+	the standard Hermitian form on $\C^n$. The group $U(n)$ acts on $S^{2n-1}$ transitively and the stabilizer of the point $(1,0,\ldots,0)$ is $U(n-1)$.
 
-	Therefore there is a canonical action of $U(1)$ acting as scalar matrices on $S^{2n-1}$
-	inherited from the action on $U(n)$. None of these odd dimensional spheres are contractible,
-	but $S^\infty$ is contractible. In particular $EU(1) = S^\infty$ and \begin{align*}
+	Therefore there is a canonical action of $U(1) = U(n)/U(n-1)$ acting as scalar matrices on $S^{2n-1}$ inherited from the action on $U(n)$. None of these odd dimensional spheres are contractible, but $S^\infty$ is contractible. In particular $EU(1) = S^\infty$ and \begin{align*}
 		BU(1) = S^\infty/U(1) = \C\P^\infty
 	\end{align*}
 	Therefore \begin{align*}
 		H^*_{U(1)}(pt) = H^*(\C\P^\infty) = \Z[t]
-	\end{align*} where $t$ is the first Chern class of the tautological line bundle and $\deg t = 2$.
+	\end{align*} where $t$ is the first Chern class of the tautological line bundle and $\deg t = 2$. The classifying space $B\C^*$ of an algebraic torus is
+	homotopy equivalent to that of its maximal compact subgroup, so \begin{align*}
+		H^*_{\C^*}(pt) = H^*(\C\P^\infty) = \Z[t]
+	\end{align*} as well.
 \end{example}
 
 \begin{example}
-	In general, $H_T^*(pt)$ can be identified with the representation ring of $T$. \begin{align*}
-		BT \cong \prod_{\rank T} \C\P^\infty
+	In general, $H_T^*(\text{pt})$ identifies with the representation ring of $T$. \begin{align*}
+		BT \cong \prod_{\rank T} \C\P^\infty \\
+		H_T^*(pt) = H^*(BT) = \Z[t_1,\ldots,t_{\rank T}]
 	\end{align*}
 
 	Given a representation $V$ of $T$,
 	we can form a vector bundle on the classifying space whose
 	total Chern class is equal to the class of $V$ in the representation ring, c.f. \cite{huybrechts}.
 \end{example}
+
+\subsection{Equivariant localization}
+At its core, the equivariant localization formula, introduced by Atiyah-Bott and Berline-Vergne, arises from the principle that, under certain conditions, integrals over a compact space with a torus action can be “localized” to the fixed points of the action. This idea can be traced back to the stationary phase approximation in physics, where integrals are approximated by contributions from critical points. In the equivariant cohomology setting, the fixed points of the torus action play a similar role.
+\begin{theorem}
+	[Atiyah-Bott, Berline-Vergne] Suppose a torus $T$ of dimensionl $l$ acts on a
+	compact oriented manifold $M$ with fixed point set $F$. If $\phi \in H^*_T(M)$, then
+	\begin{align*}
+		\int_M \phi = \sum_{x\in F} \frac{i^*_x\phi}{e_x}
+	\end{align*} where $e_x$ is the equivariant Euler class of the normal bundle of $x$ in $M$.
+\end{theorem}
+In particular, we will apply this theorem when the fixed point set is a finite set of points,
+in which case the localization formula becomes \begin{align*}
+	\int_M \phi = \sum_{x\in F} \frac{\phi(x)}{e_x}
+\end{align*} where $e_x$ is the equivariant Euler class of $T_xM$. In particular, $e_x$
+is the product of the weights of the action of $T$ on $T_xM$. Moreover, the weights are
+distinct because the fixed point set is isolated.
+
+We will now consider the localization theorem in an example.
+In general, \cite{tu} contains a proof of the ABBV localization formula
+for $S^1$-actions.
+
+\begin{example}
+	Consider the two sphere $S^2$ with real coordinates $(x,y,z)$ and the $S^1$-action \begin{align*}
+		e^{i\theta}\cdot(x,y,z) = (x\cos\theta - y\sin\theta, x\sin\theta + y\cos\theta, z).
+	\end{align*}
+	which rotates the sphere about the $z$-axis. The fixed points of this action are the north and south poles.
+
+	The Cartan model of equivariant cohomology suggests that we can consider integrating an equivariant cohomology
+	class over $S^2$ by integrating corresponding \emph{equivariant differential forms} over $S^2$. In particular
+	if we consider the equivariant symplectic form $\alpha = \omega + 2\pi\mu$ where $\mu(x,y,z) = z$
+	is the moment map, viewed as a degree $0$ form. $\alpha$ is equivariantly closed because
+	in the Cartan model, the equivariant differential is given by \begin{align*}
+		d_X = d - ui_X
+	\end{align*} where $i_X$ is the contraction with the vector field $X$ generating the $S^1$-action
+	and $u$ is the equivariant parameter which models the standard representation of $S^1$.
+
+	Therefore $\alpha$ represents a class in $H^2_{S^1}(S^2)$. We can compute the integral of $\alpha$ over $S^2$
+	using the localization formula. \begin{align*}
+		\int_{S^2} \alpha & = \frac{\mu(N)}{\text{weight of $U(1)$ action on $T_N S^2$}}
+		+ \frac{\mu(S)}{\text{weight of $U(1)$ action on $T_S S^2$}}                     \\
+		                  & = 2\pi\mu(N) - 2\pi\mu(S) = 4\pi
+	\end{align*} where $N$ and $S$ are the north and south poles respectively. Indeed
+	the surface area of $S^2$ is $4\pi$.
+\end{example}
+
+\subsection{Invariant curves}
+
+
 \subsection{Danilov's theorem}
-The geometry of a smooth projective toric variety $X$ is particularly special because
-it is encoded in the combinatorics of the fan of $X$.
+The geometry of a smooth projective toric variety $X$ is particularly special because it is encoded in the combinatorics of the fan of $X$.
 Danilov's theorem gives a presentation of the ordinary cohomology ring of $X$ in terms of the
 combinatorics of the fan of $X$.
 \begin{theorem}\label{thm:danilov}
@@ -113,231 +152,163 @@ combinatorics of the fan of $X$.
 
 Danilov's original proof of the theorem is quite involved and invokes
 a lot of intersection theory, but using facts from equivariant cohomology
-and toric geometry, we can give a much simpler proof. In particular
-smooth projective toric varieties are equivariantly formal. The proof of theorem
-\ref{thm:danilov} will be deferrred to the next section where we
-introduce the localization theorem. It is a good example of how the theory of equivariant
-cohomology enriches ordinary cohomology.
+and toric geometry, we can give a much simpler proof. In particular,
+smooth projective toric varieties are equivariantly formal. Danilov's theorem illustrates a good example of how the framework of equivariant cohomology enriches ordinary cohomology.
 
-\subsection{ABBV localization}
-At its core, the ABBV localization formula arises from the principle that,
-under certain conditions, integrals over a compact space with a torus action can be “localized”
-to the fixed points of the action. This idea can be traced back to the stationary
-phase approximation in physics, where integrals are approximated by contributions
-from critical points. In the equivariant cohomology setting, the fixed points of the torus action play a similar role.
-\begin{theorem}
-	[Atiyah-Bott, Berline-Vergne] Suppose a torus $T$ of dimensionl $l$ acts on a
-	compact oriented manifold $M$ with fixed point set $F$. If $\phi \in H^*_T(M)$, then
-	\begin{align*}
-		\int_M \phi = \sum_{x\in F} \frac{i^*_x\phi}{e_x}
-	\end{align*} where $e_x$ is the equivariant Euler class of the normal bundle of $x$ in $M$.
-\end{theorem}
-In particular, we will apply this theorem when the fixed point set is a finite set of points,
-in which case the localization formula becomes \begin{align*}
-	\int_M \phi = \sum_{x\in F} \frac{\phi(x)}{e_x}
-\end{align*} where $e_x$ is the equivariant Euler class of $T_xM$. In particular, $e_x$
-is the product of the weights of the action of $T$ on $T_xM$. Moreover, the weights are
-distinct because the fixed point set is isolated.
-
-\hfill 
-
-We will now consider the localization theorem in an example.
-In general, \cite{tu} contains a proof of the ABBV localization formula 
-for $S^1$-actions.
-
-\begin{example}
-    Consider the two sphere $S^2$ with real coordinates $(x,y,z)$ and the $S^1$-action \begin{align*}
-        e^{i\theta}\cdot(x,y,z) = (x\cos\theta - y\sin\theta, x\sin\theta + y\cos\theta, z).
-    \end{align*}
-    which rotates the sphere about the $z$-axis. The fixed points of this action are the north and south poles.
-
-    \hfill 
-
-    The Cartan model of equivariant cohomology suggests that we can consider integrating an equivariant cohomology
-    class over $S^2$ by integrating corresponding \emph{equivariant differential forms} over $S^2$. In particular
-    if we consider the equivariant symplectic form $\alpha = \omega + 2\pi\mu$ where $\mu(x,y,z) = z$
-    is the moment map, viewed as a degree $0$ form. $\alpha$ is equivariantly closed because
-    in the Cartan model, the equivariant differential is given by \begin{align*}
-        d_X = d - ui_X
-    \end{align*} where $i_X$ is the contraction with the vector field $X$ generating the $S^1$-action
-    and $u$ is the standard representation of $S^1$, the "equivariant parameter". 
-
-    Therefore $\alpha$ represents a class in $H^2_{S^1}(S^2)$. We can compute the integral of $\alpha$ over $S^2$ 
-    using the localization formula. \begin{align*}
-        \int_{S^2} \alpha &= \frac{\mu(N)}{\text{weight of $U(1)$ action on $T_N S^2$}} 
-        + \frac{\mu(S)}{\text{weight of $U(1)$ action on $T_S S^2$}} \\
-        &= 2\pi\mu(N) - 2\pi\mu(S) = 4\pi
-    \end{align*} where $N$ and $S$ are the north and south poles respectively. Indeed
-    the surface area of $S^2$ is $4\pi$.
-\end{example}
-
-\subsection{Proof of Danilov's theorem}
 \subsubsection{Cone-orbit correspondence}
 Let $T$ be an $n$-dimensional torus with character group $M$. Let $N = \Hom(M,\Z)$ be the
-dual lattice, their pairing is denoted by $\langle \cdot,\cdot\rangle$. Let $X = X(\Sigma)$ be a smooth
-complete toric variety, which are in bijection with complete nonsingular fans $\Sigma$ in $N_\R$.
-
-\hfill
+dual lattice, their pairing is denoted by $\langle \cdot,\cdot\rangle$. Let $X = X(\Sigma)$ be a smooth complete toric variety, which are in bijection with complete nonsingular fans $\Sigma$ in $N_\R$.
 
 For any convex cone $\sigma \subset N_\R$, the \emph{dual cone} in $M_\R$ is \begin{align*}
-    \sigma^\vee = \{u\in M_\R \mid \langle u,v\rangle \geq 0 \text{ for all } v\in \sigma\}.
+	\sigma^\vee = \{u\in M_\R \mid \langle u,v\rangle \geq 0 \text{ for all } v\in \sigma\}.
 \end{align*} By intersecting with the lattice, we obtain a semigroup $\sigma^\vee \cap M$
 with corresponding semigroup algebra $\C[\sigma^\vee \cap M]$. The toric variety $X$
 is covered by $T$-invariant open affine sets \begin{align*}
-    U_\sigma = \Spec \C[\sigma^\vee \cap M]
-\end{align*} The affine charts corresponding to the top-dimensional cones of $\Sigma$ 
+	U_\sigma = \Spec \C[\sigma^\vee \cap M]
+\end{align*} The affine charts corresponding to the top-dimensional cones of $\Sigma$
 are enough to cover $X$, and the intersection of cones corresponds to the intersection of
 affine charts.
 
-\hfill
-
 Each cone $\tau$ of the fan also defines a torus-invariant subvariety $V(\tau)$ of $X$ of codimension $\dim \tau$.
 On open affines, the subvariety looks like \begin{align*}
-    V(\tau) \cap U_\sigma = \Spec \C[\tau^{\perp} \cap \sigma^\vee \cap M] \hookrightarrow \Spec \C[\sigma^\vee \cap M]
+	V(\tau) \cap U_\sigma = \Spec \C[\tau^{\perp} \cap \sigma^\vee \cap M] \hookrightarrow \Spec \C[\sigma^\vee \cap M]
 \end{align*} and so elements of the dual lattice $N$ can be thought of as rational functions on $X$.
 \subsubsection{Bialynicki-Birula decomposition}
-The Bialynicki-Birula decomposition is a 
-generalization of the Morse theory for torus actions. Suppose 
-that $\C^*$ acts on a smooth projective variety $X$ with finitely 
-many fixed points $p_1,\ldots,p_k$. 
-
-\hfill
+The Bialynicki-Birula decomposition is a
+generalization of the Morse theory for torus actions. Suppose
+that $\C^*$ acts on a smooth projective variety $X$ with finitely
+many fixed points $p_1,\ldots,p_k$.
 
 Then each $T_{p_i}X$ is a representation of $\C^*$, and so we can decompose
 into weight spaces \begin{align*}
-    T_{p_i}X = \bigoplus_{\lambda\in \C} V_\lambda
+	T_{p_i}X = \bigoplus_{\lambda\in \C} V_\lambda
 \end{align*} where $V_\lambda = \set{v\in T_{p_i}X \mid t\cdot v = t^\lambda v}$.
 Note that $\lambda\neq 0 $ because the fixed point set is isolated.
 
 Define the attracting set \begin{align*}
-    C_i = \set{x\in X \mid \lim_{t\to 0} t\cdot x = p_i}
-\end{align*} 
+	C_i = \set{x\in X \mid \lim_{t\to 0} t\cdot x = p_i}
+\end{align*}
 
 \begin{theorem}
-    [Bialynicki-Birula] 
-    There exists a filtration of $X$ by closed subschemes \begin{align*}
-        X = X_n \supset X_{n-1} \supset \cdots \supset X_0 
-    \end{align*} such that 
-    each $X_i \backslash X_{i-1}$ is a disjoint union of affine spaces called cells, 
-    in particular the attracting sets.
+	[Bialynicki-Birula]
+	There exists a filtration of $X$ by closed subschemes \begin{align*}
+		X = X_n \supset X_{n-1} \supset \cdots \supset X_0
+	\end{align*} such that
+	each $X_i \backslash X_{i-1}$ is a disjoint union of affine spaces called cells,
+	in particular the attracting sets.
 \end{theorem}
 
 \begin{cor}
-    Let $X$ as above. Then \begin{enumerate}
-        \item $H_{2i+1}(X) = 0$ for all $i$;
-        \item $H_{2i}(X)$ is a $\Z$-module freely generateed by the classes
-        of the closures of the $i$-dimensional cells.
-    \end{enumerate}
+	Let $X$ as above. Then \begin{enumerate}
+		\item $H_{2i+1}(X) = 0$ for all $i$;
+		\item $H_{2i}(X)$ is a $\Z$-module freely generateed by the classes
+		      of the closures of the $i$-dimensional cells.
+	\end{enumerate}
 \end{cor}
 
 \subsubsection{Shellings}
-In this section, we apply the setup 
+In this section, we apply the setup
 of the Bialynicki-Birula decomposition to the context of toric varieties.
 
-\hfill
-
-Let $X = X(\Sigma)$ be projective, with $P$ 
+Let $X = X(\Sigma)$ be projective, with $P$
 a polytope whose normal fan is $\Sigma$. Choosing
-a general vector $v\in N_\R$ we obtain an ordering of the vertices 
+a general vector $v\in N_\R$ we obtain an ordering of the vertices
 $u_1,\ldots,u_s$ of $P$ by the order of the inner products $\langle v,u_i\rangle$.
-Geometrically, we are choosing a $1$-parameter subgroup of the torus $T$ 
+Geometrically, we are choosing a $1$-parameter subgroup of the torus $T$
 which acts on $X$. The correpsonding sub-moment map turns out to be
 a perfect Morse-Bott function on $X$.
-
-\hfill
 
 By the polytope-fan correspondence,
 we get an ordering of the maximal cones $\sigma_1,\ldots,\sigma_s$ of $\Sigma$.
 For $1\leq i \leq s$ let \begin{align*}
-    \tau_i = \bigcap_{j>i, \dim(\sigma_j \cap \sigma_i) = n-1} \sigma_j \cap \sigma_i
-\end{align*} so that 
+	\tau_i = \bigcap_{j>i, \dim(\sigma_j \cap \sigma_i) = n-1} \sigma_j \cap \sigma_i
+\end{align*} so that
 $\tau_1 = \set{0}, \tau_s = \sigma_s$ and $\tau_p \subset \tau_q$
-implies $p \leq q$. Such an ordering of cones 
-is called a \emph{shelling} of $\Sigma$. 
+implies $p \leq q$. Such an ordering of cones
+is called a \emph{shelling} of $\Sigma$.
 
 \begin{proposition}
-    A shelling gives a cellular decomposition of $X$, with
-the closures of the cells being $V(\tau_i)$. In particular,
-the classes \begin{align*}
-    \alpha_i = [V(\tau_i)] \in H^{2(n-\dim \tau_i)}(X)
-\end{align*}
-form an additive $\Z$-basis of $H^*(X)$. Moreover, the 
-corresponding equivariant cohomology classes \begin{align*}
-	\alpha_i^T = [V(\tau_i)]^T \in H^{2(n-\dim \tau_i)}_T(X)
-\end{align*} form an additive $\Z$-basis of $H^*_T(X)$.
+	A shelling gives a cellular decomposition of $X$, with
+	the closures of the cells being $V(\tau_i)$. In particular,
+	the classes \begin{align*}
+		\alpha_i = [V(\tau_i)] \in H^{2(n-\dim \tau_i)}(X)
+	\end{align*}
+	form an additive $\Z$-basis of $H^*(X)$. Moreover, the
+	corresponding equivariant cohomology classes \begin{align*}
+		\alpha_i^T = [V(\tau_i)]^T \in H^{2(n-\dim \tau_i)}_T(X)
+	\end{align*} form an additive $\Z$-basis of $H^*_T(X)$.
 \end{proposition}
 
 
-The $V(\tau_i)$ are precisely the closures of the attracting sets 
+The $V(\tau_i)$ are precisely the closures of the attracting sets
 of the chosen $\C^*$-action on $X$. We will demonstrate this in a particularly
 pleasant example.
 \begin{example}
 	[Morse theory on $\C\P^2$]
 	Classically, recall that the Chow ring (or cohomology ring) of
-	 $\C\P^2$ is \begin{align*}
+	$\C\P^2$ is \begin{align*}
 		H^*(\C\P^2) = \Z[0] \oplus \Z[\P^1] \oplus \Z[\P^2]
 	\end{align*} Consider the standard action of $T^2$ on $\C\P^2$
 	and consider the $1$-parameter subgroup acting by $t\cdot[x:y:z] = [tx:t^2y:z]$.
-	Consider the following moment image, whose 
+	Consider the following moment image, whose
 	edges are labeled by the weights of the action on the tangent space at the fixed points:
-	
+
 	\begin{center}
 		\begin{tikzpicture}
 			% Define the points
 			\coordinate (A) at (4,0);
 			\coordinate (B) at (0,0);
 			\coordinate (C) at (0,3);
-		
+
 			% Draw the triangle edges
 			\draw[<-] (B) -- (A) node[near start, below] {1};
 			\draw[<-] (A) -- (C) node[near end, right] {-1};
 			\draw[->] (C) -- (B) node[near start, left] {-2};
-		
+
 			% Draw the reverse direction labels
 			\node at (3.75,-0.2) {-1};
 			\node at (0.75,.25) {2};
 			\node at (4,.5) {1};
-		
+
 			% Label the points
 			\node[above right] at (A) {A};
 			\node[below left] at (B) {B};
 			\node[above left] at (C) {C};
-		
+
 			% Draw the outline of the triangle without arrows
 			\draw (A) -- (B) -- (C) -- cycle;
 		\end{tikzpicture}
 	\end{center}
 	Based on our choice of $1$-parameter subgroup, we have the following decomposition: \begin{align*}
-		\C\P^2 &= C \coprod (\P^1 \backslash C) \coprod \P^2 \backslash \P^1 
-	\end{align*} One sees this decomposition by considering 
-	the attracting sets of the action for each fixed point. For $C$ the 
+		\C\P^2 & = C \coprod (\P^1 \backslash C) \coprod \P^2 \backslash \P^1
+	\end{align*} One sees this decomposition by considering
+	the attracting sets of the action for each fixed point. For $C$ the
 	attracting set is $C$ itself, for $A$ the attracting set is the line $\P^1$,
 	all the points of $\P^1$ except $C$ are attracted to $A$, and for $B$ the attracting
-	set is $\P^2 \backslash \P^1$,
-	where the $\P^1$ is the $T$-invariant curve which joins the fixed points $A$ and $C$.
-	These cells are all affine spaces, and their
-	 closures are precisely $V(\tau_i) = \P^i$.
+	set is $\P^2 \backslash \P^1$, where the $\P^1$ is the $T$-invariant curve which joins the fixed points $A$ and $C$. These cells are all affine spaces, and their
+	closures are precisely $V(\tau_i) = \P^i$.
 \end{example}
 The equivariant statement follows from applying the Bialynicki-Birula decomposition
 to the mixing space, which admits a finite dimensional approximation by smooth
 projective varieties. See \cite{fulton-anderson} for more details.
 
-\hfill 
+\hfill
 
-If $X$ is not projective, then one can subdivide cones and produce 
+If $X$ is not projective, then one can subdivide cones and produce
 a refinement $\Sigma'$ of $\Sigma$ so that the corresponding map \begin{align*}
 	\pi: X(\Sigma') \to X(\Sigma)
-\end{align*} is a surjective birational $T$-equivariant morphism and 
+\end{align*} is a surjective birational $T$-equivariant morphism and
 $X(\Sigma')$ is smooth and projective. The composition \begin{align*}
 	\pi_*\circ \pi^*: H^*(X(\Sigma)) \to H^*(X(\Sigma))
 \end{align*} is the identity on $H^*(X(\Sigma))$ and on $H^*_T(X(\Sigma))$
-and therefore $\pi^*$ is injective and $\pi_*$ is surjective. Assembling
-the results of the previous sections, we obtain the following proposition.
+and therefore $\pi^*$ is injective and $\pi_*$ is surjective.
+
+Assembling the results of the previous sections, we obtain the following proposition.
 
 \begin{proposition}
 	For any complete smooth toric variety $X$, the cohomology ring $H^*(X)$
-	 is generated by the classes $[V(\tau_i)]$ of the closures of the attracting sets
-	as $\Z$-module, and the equivariant cohomology ring $H^*_T(X)$ is generated 
+	is generated by the classes $[V(\tau_i)]$ of the closures of the attracting sets
+	as $\Z$-module, and the equivariant cohomology ring $H^*_T(X)$ is generated
 	by the classes $[V(\tau_i)]^T$ as a module over $H^*_T(\text{pt})$.
 \end{proposition}
 

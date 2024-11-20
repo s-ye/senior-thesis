@@ -10,7 +10,10 @@
 %%% The following command loads the amsrefs package, which will be
 %%% used to create the bibliography:
 \usepackage[lite]{amsrefs}
+
+% personal macros
 \usepackage{macros}
+
 
 \usepackage{hyperref}
 \hypersetup{
@@ -20,6 +23,17 @@
     linkcolor=black,
     urlcolor=black
 }
+
+\usepackage{parskip} % Automatically respects blank lines
+\setlength{\parskip}{1em} % Adds more space between paragraphs
+\setlength{\parindent}{0pt} % Removes paragraph indentation
+
+\makeatletter
+\renewcommand{\l@section}{\@tocline{1}{-4pt}{1.5em}{2.3em}{}}
+\renewcommand{\l@subsection}{\@tocline{2}{-4pt}{3.8em}{3.2em}{}}
+\renewcommand{\l@subsubsection}{\@tocline{3}{-4pt}{7.0em}{4.1em}{}}
+\makeatother
+
 
 %%% The following command defines the standard names for all of the
 %%% special symbols in the AMSfonts package, listed in
@@ -40,14 +54,11 @@
 %%% the updated version of the older graphics.sty.)
 % \usepackage{graphicx}
 
-
-
 %%% This part of the file (after the \documentclass command,
 %%% but before the \begin{document}) is called the ``preamble''.
 %%% This is where we put our macro definitions.
 
 %%% Comment out (or delete) any of these that you don't want to use.
-
 
 %%%-------------------------------------------------------------------
 %%%-------------------------------------------------------------------
@@ -121,6 +132,7 @@
 % The following causes equations to be numbered within sections
 \numberwithin{equation}{section}
 
+
 % We'll use the equation counter for all our theorem environments, so
 % that everything will be numbered in the same sequence.
 
@@ -187,15 +199,12 @@
 %%% To include an abstract, uncomment the following two lines and type
 %%% the abstract in between them:
 \begin{abstract}
-We study toric varieties and their invariants.
+We study toric varieties and their invariants. 
 \end{abstract}
 
 
 \maketitle
 \tableofcontents
-
-%%% To include a table of contents, uncomment the following line:
-% \tableofcontents
 
 
 %%%-------------------------------------------------------------------
