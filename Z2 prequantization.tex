@@ -1,0 +1,52 @@
+\subsection{Prequantization}
+Manifolds equipped with integral symplectic forms admit prequantization line bundles in the following sense, cf. \cite{lsg}:
+
+\begin{theorem}
+    Let $(M,\omega)$ be a symplectic manifold. Suppose that $[\omega]$ is integral. Then 
+    there exists a "prequantization" line bundle $\cL \to M$ with $c_1(\cL) = [\omega]$ and a Hermitian connection $\alpha$
+    whose corresponding curvature form is $\omega$. Moreover $\cL$ is unique up to isomorphism.
+\end{theorem}
+
+Let $P$ be a Delzant polytope. Complexifying (\ref{eq:ses1}) and passing to the dual of the Lie algebras, we get \begin{align*}
+    1\to K_\C \to T_\C^N \to T_\C^n \to 1 \\
+    0 \to (\R^n)^* \to (\R^N)^* \to k^* \to 0
+\end{align*} where $k^*$ is the dual of the Lie algebra of $K_\C$. 
+Let $F_i$ denote the facets of $\Delta$ and for any $z = (z_1,\dots,z_N)\in\C^n$ let $F_z := \cap_{z_i = 0}F_i$.
+Consider the set \begin{align*}
+    U = \{z\in\C^n: F_z \neq \emptyset\}
+\end{align*} Recall that we defined the toric symplectic manifold $X_2(P) = U/K_\C$.
+
+\begin{proposition}
+    The line bundle $\cL = U \times_{K_C} \C$ where $K_\C$ acts on $\C$ with 
+    weight $\nu = i^*(-\lambda)$ is a prequantization line bundle for $M = U/K_\C$. 
+\end{proposition}
+
+Symplectic reduction realizes a Kahler form on the reduced space, in particular
+$M$ and $\cL$ actually carry complex structures. The following theorem is about the space of
+holomorphic sections of $\cL$.
+\begin{theorem}
+    With the setup above, we have \begin{align*}
+        \dim H^0(M,\cL) = \#(\text{integer points in } P)
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    A holomorphic section of $\cL$ over $M$ corresponds to a $K_\C$-equivariant holomorphic function $f:U\to \C$. 
+    Such $f$ extends to all of $\C^N$ because of Hartog's theorem (A holomorphic function on $\C^N$ for $N>1$ canont have 
+    an isolated singularity and therefore cannot have a singularity on a submanifold of codimension $\geq 2$).
+
+    Write such a function as its Taylor series so that \begin{align*}
+        f = \sum_{\alpha\in\N^n} c_\alpha z^\alpha
+    \end{align*} Consider the equivariance one term at a time. 
+    Thinking about the monomial $f(z) = z^I$ we 
+    see that \begin{align*}
+        f(k\cdot z) &= f(i(k)\cdot z) = (i(k)\cdot z)^I = i(k)^Iz^I = k^{i^*(I)}z^I \\
+        k\cdot f(z) &= k^{\nu}z^I
+    \end{align*} and therefore a basis for the space of equivariant functions $f:U\to \C$ 
+    is given by \begin{align*}
+        \set{z^I \st i^*(I) = \nu, I\in\N^n}
+    \end{align*} and the set of such $I$ is \begin{align*}
+        \Z^n_+ \cap (i^*)^{-1}(\nu)
+    \end{align*} monomials corresponding to lattice points in $P$.
+\end{proof}
+

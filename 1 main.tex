@@ -29,9 +29,9 @@
 \setlength{\parindent}{0pt} % Removes paragraph indentation
 
 \makeatletter
-\renewcommand{\l@section}{\@tocline{1}{-4pt}{1.5em}{2.3em}{}}
-\renewcommand{\l@subsection}{\@tocline{2}{-4pt}{3.8em}{3.2em}{}}
-\renewcommand{\l@subsubsection}{\@tocline{3}{-4pt}{7.0em}{4.1em}{}}
+\renewcommand{\l@section}{\@tocline{1}{-6pt}{1.5em}{2.3em}{}}
+\renewcommand{\l@subsection}{\@tocline{2}{-6pt}{3.8em}{3.2em}{}}
+\renewcommand{\l@subsubsection}{\@tocline{3}{-6pt}{7.0em}{4.1em}{}}
 \makeatother
 
 
@@ -40,6 +40,8 @@
 %%% http://www.ctan.org/tex-archive/info/symbols/math/symbols.pdf
 \usepackage{amssymb}
 \usepackage{tikz-cd}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{float}
 
 
 
@@ -242,10 +244,12 @@ We study toric varieties and their invariants.
 \input{2 constructing.tex}
 \section{Equivariant cohomology}
 \input{3 ec.tex}
-\section{Sheaf cohomology}
-\section{Toric degenerations}
+
 \section{Appendix A: Vector bundles and connections}
 \input{Z1 vb-conn.tex}
+
+\section{Appendix B: Prequantization}
+\input{Z2 prequantization.tex}
 
 \bibliography{refs}{}
 \bibliographystyle{plain}
