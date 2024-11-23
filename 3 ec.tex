@@ -30,7 +30,7 @@ always exists and is unique up to homotopy equivalence, see \cite{hatcher}.
 
 	Given a representation $V$ of $T$,
 	we can form a vector bundle on the classifying space whose
-	total Chern class is equal to the class of $V$ in the representation ring, c.f. \cite{huybrechts}.
+	total Chern class is equal to the class of $V$ in the representation ring, see \cite{huybrechts}.
 \end{example}
 
 Here are some important properties to know about equivariant cohomology:
@@ -48,7 +48,7 @@ where all subsets and maps are assumed to be equivariant. Let $\Lambda = H_T^*(\
 
 
 \subsection{Invariant curves}
-This section explores some key topological ideas underpinning equivariant localization. Theorem \ref{thm:slice} provides the local structure near orbits and simplifies the analysis of tangent spaces at fixed points. See \cite{fulton-anderson} for a detailed discussion.
+This section explores some key topological ideas underpinning equivariant localization. Theorem \ref{thm:slice} provides the local structure near orbits and simplifies the analysis of tangent spaces at fixed points. See \cite{fulton-anderson} for a detailed discussion of the results in this section.
 
 \begin{theorem}[Slice theorem]
 	\label{thm:slice}
@@ -62,7 +62,7 @@ This section explores some key topological ideas underpinning equivariant locali
 \begin{lemma}
 	Let $G$ be a connected reductive linear algebraic group (or compact connected Lie group) acting on a nonsingular algebraic variety $X$, with a fixed point $p \in X^G$. The point $p$ is isolated if and only if the trivial representation does not occur in $T_p X$.
 \end{lemma}
-When $G$ is a torus and $\dim X = n$, the lemma is saying that $p\in X^T$ is isolated if and only of $c_n^T(T_pX) \neq 0$.
+When $G$ is a torus and $\dim X = n$, the lemma reads that $p\in X^T$ is isolated if and only of $c_n^T(T_pX) \neq 0$.
 \begin{proof}
 	By the slice theorem, we can reduce to the case where $X = V$ is a representation of $G$, and $p = 0$ is the origin. In this case, for any representation $V$ of a connected group, the origin $0 \in V$ is an isolated fixed point if and only if $V$ contains no copy of the trivial representation.
 \end{proof}
@@ -71,14 +71,11 @@ The \( T \)-invariant curves in a variety \( X \) are important invariants. In p
 \[
 	\iota^* : H_T^*X \to H_T^*X^T.
 \]
-First, we introduce notation and basic facts about such curves.
-
-Suppose \( T \) acts on \( \mathbb{P}^1 \) by distinct characters \( \chi_1 \) and \( \chi_2 \), so the fixed points are \( 0 = [1, 0] \) and \( \infty = [0, 1] \). Writing \( \chi = \chi_2 - \chi_1 \), we have
+First, we introduce notation and basic facts about such curves. Suppose \( T \) acts on \( \mathbb{P}^1 \) by distinct characters \( \chi_1 \) and \( \chi_2 \), so the fixed points are \( 0 = [1, 0] \) and \( \infty = [0, 1] \). Writing \( \chi = \chi_2 - \chi_1 \), we have
 \[
 	T_0\mathbb{P}^1 = \mathbb{C}_\chi \quad \text{and} \quad T_\infty\mathbb{P}^1 = \mathbb{C}_{-\chi}.
 \]
-
-More generally, if \( T \) acts on a nonsingular curve \( C \) with two fixed points, \( C^T = \{p, q\} \), then there is an equivariant isomorphism \( C \cong \mathbb{P}^1 \) sending \( p \) to \( 0 \) and \( q \) to \( \infty \). The action of $T$ on the open set $\C^*\subset\P^1$ determines up to sign \( \pm\chi \) the \emph{character of \( T \) acting on \( C \)}.
+More generally, if \( T \) acts on a nonsingular curve \( C \) with \( C^T = \{p, q\} \), then there is an equivariant isomorphism \( C \cong \mathbb{P}^1 \) sending \( p \) to \( 0 \) and \( q \) to \( \infty \). The action of $T$ on the open set $\C^*\subset\P^1$ determines up to sign \( \pm\chi \) the \emph{character of \( T \) acting on \( C \)}.
 
 \begin{proposition}
 	Let \( T \) act on an \( n \)-dimensional nonsingular algebraic variety \( X \), and let \( p \in X^T \) be an isolated fixed point, so the tangent weights \( \chi_1, \dots, \chi_n \) on \( T_p X \) are all nonzero.
@@ -88,7 +85,7 @@ More generally, if \( T \) acts on a nonsingular curve \( C \) with two fixed po
 		\item If two characters have opposite directions, then there are infinitely many \( T \)-curves through any \( T \)-invariant neighborhood of \( p \).
 	\end{enumerate}
 \end{proposition}
-
+Understanding the tangent weights at fixed points is crucial for the study of equivariant cohomology. The following theorem is a key result in this direction.
 \begin{theorem}[Localization Theorem]
 	Consider a $d$-dimensional nonsingular variety $X$ with finitely many fixed points. Let
 	\[
@@ -140,28 +137,8 @@ is given by labeling the vertices of the moment graph with characters. See \cite
 	lies in the image of \( \iota^* : H_T^*X \to H_T^*X^T \) if and only if for each \( T\)-curve \( C_{pq} \cong \mathbb{P}^1 \) connecting distinct points \( p, q \in X^T \), the difference \( u_p - u_q \) is divisible by the character \( \pm \chi_{pq} \) of \( C_{pq} \).
 \end{theorem}
 
-\begin{example}
-	Consider the two sphere $S^2$ with real coordinates $(x,y,z)$ and the $S^1$-action \begin{align*}
-		e^{i\theta}\cdot(x,y,z) = (x\cos\theta - y\sin\theta, x\sin\theta + y\cos\theta, z).
-	\end{align*}
-	which rotates the sphere about the $z$-axis. The fixed points of this action are the north and south poles.
-
-	The Cartan model of equivariant cohomology establishes that we can consider integrating an equivariant cohomology class over $S^2$ by integrating corresponding \emph{equivariant differential forms} over $S^2$. In particular if we consider the equivariant symplectic form $\alpha = \omega + 2\pi\mu$ where $\mu(x,y,z) = z$ is the moment map, viewed as a degree $0$ form. $\alpha$ is equivariantly closed because in the Cartan model, the equivariant differential is given by \begin{align*}
-		d_X = d - ui_X
-	\end{align*} where $i_X$ is the contraction with the vector field $X$ generating the $S^1$-action and $u$ is the equivariant parameter which models the standard representation of $S^1$.
-
-	Therefore $\alpha$ represents a class in $H^2_{S^1}(S^2)$. We can compute the integral of $\alpha$ over $S^2$
-	using the localization formula. \begin{align*}
-		\int_{S^2} \alpha & = \frac{\mu(N)}{\text{weight of $U(1)$ action on $T_N S^2$}}
-		+ \frac{\mu(S)}{\text{weight of $U(1)$ action on $T_S S^2$}}                     \\
-		                  & = 2\pi\mu(N) - 2\pi\mu(S) = 4\pi
-	\end{align*} where $N$ and $S$ are the north and south poles respectively. Indeed
-	the surface area of $S^2$ is $4\pi$.
-\end{example}
-
 \subsection{Bialynicki-Birula decomposition}
-The Bialynicki-Birula decomposition, see \cite{bb}, is a
-generalization of the Morse theory for torus actions. For $\C^*$-varieties with finitely many fixed points, it implies a particularly nice algebraic notion of equivariant formality, and in particular the equivariant cohomology of $X$ is a free module over the equivariant cohomology of a point.
+The Bialynicki-Birula decomposition is a generalization of the Morse theory for torus actions \cite{bb}. For $\C^*$-varieties with finitely many fixed points, it implies a particularly nice algebraic notion of equivariant formality, and in particular the equivariant cohomology of $X$ is a free module over the equivariant cohomology of a point. Equivariant formality also implies the GKM condition.
 
 \begin{definition}
 	A $T$-space $X$ is called \textbf{equivariantly formal} if the Leray spectral sequence
@@ -341,7 +318,7 @@ Assembling the results of the previous sections, we obtain the following proposi
 \end{proposition}
 
 \subsection{Danilov's theorem}
-Let \( D_1, \ldots, D_d \) be the \( T \)-invariant divisors, with \( D_i = V(\rho_i) \) for rays \( \rho_1, \ldots, \rho_d \) of \( \Sigma \). Let \( v_i \in N \) be the minimal generator of the ray \( \rho_i \). For \( u \in M \), the element \( e^u \in \mathbb{C}[M] \) determines a rational function on \( X \). The corresponding divisor is
+Let \( D_1, \ldots, D_d \) be the \( T \)-invariant divisors, \( D_i = V(\rho_i) \) for rays \( \rho_1, \ldots, \rho_d \) of \( \Sigma \). Let \( v_i \in N \) be the minimal generator of the ray \( \rho_i \). For \( u \in M \), the element \( e^u \in \mathbb{C}[M] \) determines a rational function on \( X \). The corresponding divisor is
 \[
 	\operatorname{div}(e^u) = \sum_i \langle u, v_i \rangle D_i.
 \]
